@@ -80,7 +80,18 @@ function playToFive() {
    // For example,
    // console.log('Player chose ' + playerMove + ' while Computer chose ' + computerMove);
    // console.log('The score is currently ' + playerWins + ' to ' + computerWins + '\n');
-   /* YOUR CODE HERE */
-    return [playerWins, computerWins];
+   while (playerWins < 5 && computerWins < 5) {
+    var playerMove = getPlayerMove();
+    var computerMove = getComputerMove();
+    var winner = getWinner(playerMove,compueterMove);
+    if (winner === "player"){
+        playerWins += 1;
+    } else if (winner === "computer"){
+        computerWins += 1;
+    }
+    console.log('Player chose ' + playerMove + ' while Computer chose ' + computerMove);
+    console.log('The score is currently ' + playerWins + ' to ' + computerWins + '\n');
+}
+   return [playerWins, computerWins];
 }
 
