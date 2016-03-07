@@ -52,16 +52,31 @@ function getWinner(playerMove,computerMove) {
         return "tie"
     } else if (playerMove === "rock") {
         if (computerMove === "scissors") {
-            return "player"
+            return "player";
         }
       else if (playerMove === "paper") {
         if (computerMove === "rock") {
-            return "player"
+            return "player";
         }
-    }
-      else if (playerMove === "scissors"){
+      }
+      else if (playerMove === "scissors") {
         if (computerMove === "paper") {
-            return "player"
+            return "player";
+        }
+      }
+      else if (computerMove === "rock") {
+        if (playerMove === "scissors") {
+            return "computer";
+        }
+      }
+      else if (computerMove === "paper") {
+        if (playerMove === "rock") {
+            return "computer";
+        }
+      }
+      else if (computerMove === "scissors") {
+        if (playerMove === "paper") {
+            return "computer";
         }
       }
     } 
@@ -83,7 +98,7 @@ function playToFive() {
    while (playerWins < 5 && computerWins < 5) {
     var playerMove = getPlayerMove();
     var computerMove = getComputerMove();
-    var winner = getWinner(playerMove,compueterMove);
+    var winner = getWinner(playerMove,computerMove);
     if (winner === "player"){
         playerWins += 1;
     } else if (winner === "computer"){
