@@ -50,35 +50,18 @@ function getWinner(playerMove,computerMove) {
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
     if (playerMove === computerMove) {
         return "tie"
-    } else if (playerMove === "rock") {
-        if (computerMove === "scissors") {
+    } else if (playerMove === "rock" && computerMove === "scissors") {
             return "player";
-        }
-      else if (playerMove === "paper") {
-        if (computerMove === "rock") {
+    } else if (playerMove === "paper" && computerMove === "rock") {
             return "player";
-        }
-      }
-      else if (playerMove === "scissors") {
-        if (computerMove === "paper") {
+    } else if (playerMove === "scissors" && computerMove === "paper") {
             return "player";
-        }
-      }
-      else if (computerMove === "rock") {
-        if (playerMove === "scissors") {
+    } else if (computerMove === "rock" && playerMove === "scissors") {
             return "computer";
-        }
-      }
-      else if (computerMove === "paper") {
-        if (playerMove === "rock") {
+    } else if (computerMove === "paper" && playerMove === "rock") {
             return "computer";
-        }
-      }
-      else if (computerMove === "scissors") {
-        if (playerMove === "paper") {
+    } else if (computerMove === "scissors" && playerMove === "paper") {
             return "computer";
-        }
-      }
     } 
     return winner;
 }
