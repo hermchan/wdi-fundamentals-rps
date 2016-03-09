@@ -97,3 +97,4 @@ function playToFive() {
     }
 }
 
+playToFive();
