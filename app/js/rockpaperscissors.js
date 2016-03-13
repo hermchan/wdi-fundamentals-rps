@@ -4,8 +4,7 @@
 'use strict';
 
 function getInput() {
-    console.log("Please choose either 'rock', 'paper', or 'scissors'.")
-    return prompt();
+    return prompt("Please choose either 'rock', 'paper', or 'scissors'.");
 }
 function randomPlay() {
     var randomNumber = Math.random();
@@ -49,19 +48,19 @@ function getWinner(playerMove,computerMove) {
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
     if (playerMove === computerMove) {
-        return "tie"
+        winner = "tie";
     } else if (playerMove === "rock" && computerMove === "scissors") {
-            return "player";
+            winner = "player";
     } else if (playerMove === "paper" && computerMove === "rock") {
-            return "player";
+            winner = "player";
     } else if (playerMove === "scissors" && computerMove === "paper") {
-            return "player";
+            winner = "player";
     } else if (computerMove === "rock" && playerMove === "scissors") {
-            return "computer";
+            winner = "computer";
     } else if (computerMove === "paper" && playerMove === "rock") {
-            return "computer";
+            winner = "computer";
     } else if (computerMove === "scissors" && playerMove === "paper") {
-            return "computer";
+            winner = "computer";
     } 
     return winner;
 }
@@ -84,7 +83,6 @@ function playToFive() {
     var winner = getWinner(playerMove,computerMove);
     if (winner === "player"){
         console.log('Player chose ' + playerMove + ' while Computer chose ' + computerMove);
-        console.log('The score is currently ' + playerWins + ' to ' + computerWins + '\n');
         playerWins += 1;
     } else if (winner === "computer"){
         console.log('Player chose ' + playerMove + ' while Computer chose ' + computerMove);
